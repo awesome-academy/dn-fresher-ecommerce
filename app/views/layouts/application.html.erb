@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= t :title %></title>
+    <title><%= full_title yield(:title) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
@@ -17,7 +17,6 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
   </head>
-
   <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -27,6 +26,9 @@
     <%= render "layouts/header" %>
 
     <div>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
       <%= yield %>
     </div>
 
@@ -63,12 +65,14 @@
       </div>
     </div>
     <!-- Partner Logo Section End -->
+    <!-- Debug
+    <%= debug(params) if Rails.env.development? %>
+    -->
 
     <%= render "layouts/footer" %>
 
     <!-- Js Plugins -->
     <script src="assets/jquery-3.3.1.min.js"></script>
-    <script src="assets/bootstrap-dist/js/bootstrap.min.js"></script>
     <script src="assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
     <script src="assets/jQuery.countdown/dist/jquery.countdown.min.js"></script>
     <script src="assets/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>

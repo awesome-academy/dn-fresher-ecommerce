@@ -7,6 +7,8 @@ gem "active_storage_validations", "0.8.2"
 gem "bcrypt", "~> 3.1.7"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-kaminari-views"
+gem "bootstrap-sass", "3.4.1"
+gem "config"
 gem "image_processing", "1.9.3"
 gem "jbuilder", "~> 2.7"
 gem "kaminari"
