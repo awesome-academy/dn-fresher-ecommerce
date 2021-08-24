@@ -1,4 +1,5 @@
 vi:
+  n/a: n/a
   eng: "Tiếng Anh"
   vnese: "Tiếng Việt"
   title_page: "Thương mại điện tử Sun"
@@ -16,6 +17,15 @@ vi:
     setting: "Thiết lập"
     log_out: "Đăng xuất"
     profile: "Trang cá nhân"
+    login: "Đăng nhập"
+    language: "Ngôn ngữ"
+    en: "Tiếng Anh"
+    vi: "Tiếng Việt"
+    all_category: "Tất cả loại sản phẩm"
+    search: "Search..."
+    view_cart: "XEM GIỎ HÀNG"
+    check_out: "CHECK OUT"
+    all_departments: "Tất cả loại"
   footer:
     introduce: "Sản phẩm %{course} bởi %{author}"
   pages:
@@ -50,3 +60,22 @@ vi:
       session:
         email: "Email"
         password: "Mật khẩu"
+  views:
+    pagination:
+      first: "« Đầu"
+      last: "Cuối »"
+      previous: "‹ Trước"
+      next: "Sau ›"
+      truncate: "…"
+  products:
+    index:
+      shop: Cửa Hàng
+      categories: Loại sản phẩm
+      price: Giá
+      filter: Lọc
+      tags: Thẻ
+      default_sorting: Sắp xếp mặc định
+      show: Xem
+      products: Sản phẩm
+      quick_view: Xem nhanh
+      coat: Áo khoác

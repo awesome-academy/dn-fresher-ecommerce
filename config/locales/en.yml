@@ -16,6 +16,15 @@ en:
     setting: "Settings"
     log_out: "Log out"
     profile: "Profile"
+    login: "Login"
+    language: "Language"
+    en: "English"
+    vi: "Vietnamese"
+    all_category: "All Categories"
+    search: "What do you need?"
+    view_cart: "VIEW CARD"
+    check_out: "CHECK OUT"
+    all_departments: "All departments"
   footer:
     introduce: "The %{course} by %{author}"
   pages:
@@ -32,17 +41,6 @@ en:
         significant: false
         strip_insignificant_zeros: true
         unit: "$"
-  header:
-    email_contact: "hello.colorlib@gmail.com"
-    number_phone: "+65 11.188.888"
-    login: "Login"
-    en: "English"
-    vi: "Vietnamese"
-    all_category: "All Categories"
-    search: "What do you need?"
-    view_cart: "VIEW CARD"
-    check_out: "CHECK OUT"
-    all_departments: "All departments"
   footer:
     address: "Address: 60-49 Road 11378 New York"
     join_us: "Get E-mail updates about our latest shop and special offers."
@@ -77,5 +75,22 @@ en:
       new_user: "Or Create An Account?"
       sign_up_now: "Sign up now!"
       forgot_pass: "Forget your Password"
-
-
+  views:
+    pagination:
+      first: "« FIRST"
+      last: "LAST »"
+      previous: "‹ PREV"
+      next: "NEXT ›"
+      truncate: "…"
+  products:
+    index:
+      shop: Shop
+      categories: Categories
+      price: Price
+      filter: Filter
+      tags: Tags
+      default_sorting: Default Sorting
+      show: Show
+      products: Products
+      quick_view: Quick View
+      coat: Coat
