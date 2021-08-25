@@ -32,3 +32,4 @@ config/credentials.yml.enc
 .framgia-ci-reports/
 .framgia-ci-result.temp.yml
 /spec/
+/vendor/*
