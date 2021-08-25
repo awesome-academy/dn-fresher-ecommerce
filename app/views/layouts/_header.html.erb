@@ -5,21 +5,21 @@
       <div class="ht-left">
         <div class="mail-service">
           <i class=" fa fa-envelope"></i>
-          hello.colorlib@gmail.com
+          <%= t :email_contact %>
         </div>
         <div class="phone-service">
           <i class=" fa fa-phone"></i>
-          +65 11.188.888
+          <%= t :number_phone %>
         </div>
       </div>
       <div class="ht-right">
-        <a href="#" class="login-panel"><i class="fa fa-user"></i>Login</a>
+        <a href="#" class="login-panel"><i class="fa fa-user"></i></a>
         <div class="lan-selector">
-          <select class="language_drop" name="countries" id="countries" style="width:300px;">
+          <select class="language_drop" name="countries" id="countries">
             <option value='yt' data-image="assets/img/flag-1.jpg" data-imagecss="flag yt"
-              data-title="English">English</option>
+              data-title="English"><%= link_to t("header.en"), locale: :en %></option>
             <option value='yu' data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
-              data-title="Bangladesh">German </option>
+              data-title="Vietnamese"><%= link_to t("header.vi"), locale: :vi %></option>
           </select>
         </div>
         <div class="top-social">
@@ -43,9 +43,9 @@
         </div>
         <div class="col-lg-7 col-md-7">
           <div class="advanced-search">
-            <button type="button" class="category-btn">All Categories</button>
+            <button type="button" class="category-btn"><%= t :all_category %></button>
             <div class="input-group">
-              <input type="text" placeholder="What do you need?">
+              <input type="text" placeholder="<%= t :search %>">
               <button type="button"><i class="ti-search"></i></button>
             </div>
           </div>
@@ -61,50 +61,51 @@
             <li class="cart-icon">
               <a href="#">
               <i class="icon_bag_alt"></i>
-              <span>3</span>
+              <span><%= total_quantity_cart @carts %></span>
               </a>
               <div class="cart-hover">
                 <div class="select-items">
                   <table>
                     <tbody>
-                      <tr>
-                        <td class="si-pic"><img src="assets/img/select-product-1.jpg" alt=""></td>
-                        <td class="si-text">
-                          <div class="product-selected">
-                            <p>$60.00 x 1</p>
-                            <h6>Kabino Bedside Table</h6>
-                          </div>
-                        </td>
-                        <td class="si-close">
-                          <i class="ti-close"></i>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="si-pic"><img src="assets/img/select-product-2.jpg" alt=""></td>
-                        <td class="si-text">
-                          <div class="product-selected">
-                            <p>$60.00 x 1</p>
-                            <h6>Kabino Bedside Table</h6>
-                          </div>
-                        </td>
-                        <td class="si-close">
-                          <i class="ti-close"></i>
-                        </td>
-                      </tr>
+                      <% unless session_cart_exist? %>
+                        <% @carts.each_with_index do |product, index| %>
+                          <% next if index > 2 %>
+                          <tr>
+                            <td class="si-pic"><img src="assets/img/select-product-1.jpg" alt=""></td>
+                            <td class="si-text">
+                              <div class="product-selected">
+                                <p><%= number_to_currency product.price %> x <%= current_cart[product.id.to_s] %></p>
+                                <h6><%= product.name %></h6>
+                              </div>
+                            </td>
+                            <td class="si-close">
+                              <i class="ti-close"></i>
+                            </td>
+                          </tr>
+                        <% end %>
+                      <% else %>
+                        <tr>
+                          <td class="si-text">
+                            <div class="product-selected">
+                              <p><%= t :no_have_product %></p>
+                            </div>
+                          </td>
+                        </tr>
+                      <% end %>
                     </tbody>
                   </table>
                 </div>
                 <div class="select-total">
-                  <span>total:</span>
-                  <h5>$120.00</h5>
+                  <span><%= t :total_cart %></span>
+                  <h5><%= number_to_currency total_price_cart(@carts) %></h5>
                 </div>
                 <div class="select-button">
-                  <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                  <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+                  <a href="#" class="primary-btn view-card"><%= t "header.view_cart" %></a>
+                  <a href="#" class="primary-btn checkout-btn"><%= t "header.check_out" %></a>
                 </div>
               </div>
             </li>
-            <li class="cart-price">$150.00</li>
+            <li class="cart-price"><%= number_to_currency total_price_cart(@carts) %></li>
           </ul>
         </div>
       </div>
@@ -115,42 +116,28 @@
       <div class="nav-depart">
         <div class="depart-btn">
           <i class="ti-menu"></i>
-          <span>All departments</span>
+          <span><%= t :all_departments %></span>
           <ul class="depart-hover">
-            <li class="active"><a href="#">Women’s Clothing</a></li>
-            <li><a href="#">Men’s Clothing</a></li>
-            <li><a href="#">Underwear</a></li>
-            <li><a href="#">Kid's Clothing</a></li>
-            <li><a href="#">Brand Fashion</a></li>
-            <li><a href="#">Accessories/Shoes</a></li>
-            <li><a href="#">Luxury Brands</a></li>
-            <li><a href="#">Brand Outdoor Apparel</a></li>
+            <li class="active"><a href="#"><%= t :no_link %></a></li>
           </ul>
         </div>
       </div>
       <nav class="nav-menu mobile-menu">
         <ul>
-          <li class="active"><a href="./index.html">Home</a></li>
-          <li><a href="./shop.html">Shop</a></li>
+          <li class="active"><a href="./index.html"><%= t :no_link %></a></li>
+          <li><a href="./shop.html"><%= t :no_link %></a></li>
           <li>
-            <a href="#">Collection</a>
+            <a href="#"><%= t :no_link %></a>
             <ul class="dropdown">
-              <li><a href="#">Men's</a></li>
-              <li><a href="#">Women's</a></li>
-              <li><a href="#">Kid's</a></li>
+              <li><a href="#"><%= t :no_link %></a></li>
             </ul>
           </li>
-          <li><a href="./blog.html">Blog</a></li>
-          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="./blog.html"><%= t :no_link %></a></li>
+          <li><a href="./contact.html"><%= t :no_link %></a></li>
           <li>
-            <a href="#">Pages</a>
+            <a href="#"><%= t :no_link %></a>
             <ul class="dropdown">
-              <li><a href="./blog-details.html">Blog Details</a></li>
-              <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-              <li><a href="./check-out.html">Checkout</a></li>
-              <li><a href="./faq.html">Faq</a></li>
-              <li><a href="./register.html">Register</a></li>
-              <li><a href="./login.html">Login</a></li>
+              <li><a href="./blog-details.html"><%= t :no_link %></a></li>
             </ul>
           </li>
         </ul>

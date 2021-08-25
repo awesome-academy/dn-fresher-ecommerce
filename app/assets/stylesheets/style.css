@@ -4310,3 +4310,7 @@ ol {
 		padding-right: 15px;
 	}
 }
+
+.language_drop {
+	width: 300px;
+}

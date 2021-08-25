@@ -6,18 +6,12 @@ end
 
 categories = Category.where.not(parent_id: 0)
 
-30.times do
-  categories.each_with_index do |category, index| 
-    category.products.create!(name: "Product #{index}",
-                              content: "Content for product #{index}",
-                              quantity: index + 10 ,
-                              price: 100000 ,
-                              views: index + 20 ,
-                              number_of_vote_star: index + 10 ,
-                              total_vote: index + 15 ,
-                              category_id: category.id)
-  end
-end
+categories.each_with_index do |category, index| 
+  category.products.create!(name: "Product #{index}",
+                            content: "Content for product #{index}",
+                            quantity: index + 10 ,
+                            price: 100000 ,
+                            category_id: category.id)
 
 10.times do |index|
     User.create!(email: "user#{index}@gmail.com",
