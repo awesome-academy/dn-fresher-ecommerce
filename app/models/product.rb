@@ -4,4 +4,6 @@ class Product < ApplicationRecord
   has_many :suggests, dependent: :destroy
   has_many :comments, dependent: :destroy
   belongs_to :category
+
+  scope :load_by_ids, ->(ids){where id: ids}
 end

@@ -5,3 +5,44 @@ en:
       vnese: "Vietnamese"
       title: "Ecommerce Applicaiton"
       greeting: "Hello World"
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%n %u"
+        precision: 0
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: true
+        unit: "$"
+  header:
+    email_contact: "hello.colorlib@gmail.com"
+    number_phone: "+65 11.188.888"
+    login: "Login"
+    en: "English"
+    vi: "Vietnamese"
+    all_category: "All Categories"
+    search: "What do you need?"
+    view_cart: "VIEW CARD"
+    check_out: "CHECK OUT"
+    all_departments: "All departments"
+  footer:
+    address: "Address: 60-49 Road 11378 New York"
+    join_us: "Get E-mail updates about our latest shop and special offers."
+  views:
+    pagination:
+      first: "« FIRST"
+      last: "LAST »"
+      previous: "‹ PREV"
+      next: "NEXT ›"
+      truncate: "…"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "No %{entry_name} found"
+          one: "Displaying <b>1</b> %{entry_name}"
+          other: "Displaying <b>all %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Displaying %{entry_name} <b>%{first} - %{last}</b> of <b>%{total}</b> in total"
+  not_found: "Not found value"

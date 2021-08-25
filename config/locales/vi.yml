@@ -5,3 +5,13 @@ vi:
       vnese: "Tiếng Việt"
       title: "Thương mại điện tử"
       greeting: "Xin chào mọi người"
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%n %u"
+        precision: 0
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: true
+        unit: "đồng"
