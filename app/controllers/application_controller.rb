@@ -15,6 +15,6 @@ class ApplicationController < ActionController::Base
   end
 
   def load_cart
-    @carts = Product.load_by_ids current_cart.keys
+    @carts = Product.load_by_ids session_cart.keys
   end
 end

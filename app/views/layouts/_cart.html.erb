@@ -12,12 +12,14 @@
               <td class="si-pic"><img src="assets/img/select-product-1.jpg" alt=""></td>
               <td class="si-text">
                 <div class="product-selected">
-                  <p><%= number_to_currency product.price %> x <%= current_cart[product.id.to_s] %></p>
+                  <p><%= number_to_currency product.price %> x <%= session_cart[product.id.to_s] %></p>
                   <h6><%= product.name %></h6>
                 </div>
               </td>
               <td class="si-close">
-                <i class="ti-close"></i>
+                <%= link_to remove_from_cart_path product.id do %>
+                  <i class="ti-close"></i>
+                <% end %>
               </td>
             </tr>
           <% end %>
