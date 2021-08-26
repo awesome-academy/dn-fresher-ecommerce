@@ -59,50 +59,7 @@
               </a>
             </li>
             <li class="cart-icon">
-              <a href="#">
-              <i class="icon_bag_alt"></i>
-              <span><%= total_quantity_cart @carts %></span>
-              </a>
-              <div class="cart-hover">
-                <div class="select-items">
-                  <table>
-                    <tbody>
-                      <% unless session_cart_exist? %>
-                        <% @carts.take(3).each do |product| %>
-                          <tr>
-                            <td class="si-pic"><img src="assets/img/select-product-1.jpg" alt=""></td>
-                            <td class="si-text">
-                              <div class="product-selected">
-                                <p><%= number_to_currency product.price %> x <%= current_cart[product.id.to_s] %></p>
-                                <h6><%= product.name %></h6>
-                              </div>
-                            </td>
-                            <td class="si-close">
-                              <i class="ti-close"></i>
-                            </td>
-                          </tr>
-                        <% end %>
-                      <% else %>
-                        <tr>
-                          <td class="si-text">
-                            <div class="product-selected">
-                              <p><%= t :no_have_product %></p>
-                            </div>
-                          </td>
-                        </tr>
-                      <% end %>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="select-total">
-                  <span><%= t :total_cart %></span>
-                  <h5><%= number_to_currency total_price_cart @carts %></h5>
-                </div>
-                <div class="select-button">
-                  <a href="#" class="primary-btn view-card"><%= t "header.view_cart" %></a>
-                  <a href="#" class="primary-btn checkout-btn"><%= t "header.check_out" %></a>
-                </div>
-              </div>
+              <%= render "layouts/cart" %>
             </li>
             <li class="cart-price"><%= number_to_currency total_price_cart @carts %></li>
           </ul>
