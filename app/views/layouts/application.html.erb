@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DnFresherEcommerce</title>
+    <title><%= t :title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/jquery-ui-1.12.1/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="assets/SlickNav-master/dist/slicknav.min.css" type="text/css">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
   </head>
 
   <body>
@@ -42,5 +43,6 @@
     <script src="assets/jquery.slicknav.js"></script>
     <script src="assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
     <script src="assets/main.js"></script>
+    <script><%= sanitize toastr_flash %></script>
   </body>
 </html>
