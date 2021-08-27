@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     end
 
     root to: "pages#home"
-    get "add-to-cart/:id", to: "carts#add_to_cart"
+    get "add-to-cart/:id(/:quantity)", to: "carts#add_to_cart",
+                                       as: :add_to_cart
   end
 end
