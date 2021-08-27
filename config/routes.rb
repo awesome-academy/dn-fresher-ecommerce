@@ -7,8 +7,16 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
-    get "add-to-cart/:id(/:quantity)", to: "carts#add_to_cart",
-                                       as: :add_to_cart
-    get "remove-from-cart/:id", to: "carts#remove_from_cart",
-                                       as: :remove_from_cart
+    resources :carts, only: %i(index) do
+      collection do
+        get "add-to-cart/:id(/:quantity)", to: "carts#add_to_cart",
+                                           as: :add_to
+        get "minus-item-cart/:id(/:quantity)", to: "carts#minus_quantity_cart",
+                                               as: :minus_item
+        delete "delete-cart", to: "carts#delete_cart",
+                                    as: :delete
+        delete "delete-item-cart/:id", to: "carts#delete_item_cart",
+                                       as: :destroy_item
+      end
+    end
 end

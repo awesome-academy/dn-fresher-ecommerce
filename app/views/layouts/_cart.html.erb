@@ -9,7 +9,7 @@
         <% unless session_cart_exist? %>
           <% @carts.take(3).each do |product| %>
             <tr>
-              <td class="si-pic"><img src="assets/img/select-product-1.jpg" alt=""></td>
+              <td class="si-pic"><img src="/assets/img/select-product-1.jpg" alt=""></td>
               <td class="si-text">
                 <div class="product-selected">
                   <p><%= number_to_currency product.price %> x <%= session_cart[product.id.to_s] %></p>
@@ -17,7 +17,7 @@
                 </div>
               </td>
               <td class="si-close">
-                <%= link_to remove_from_cart_path product.id do %>
+                <%= link_to destroy_item_carts_path(product.id), method: :delete, data: {confirm: "You sure?", remote: true} do %>
                   <i class="ti-close"></i>
                 <% end %>
               </td>
@@ -40,7 +40,7 @@
     <h5><%= number_to_currency total_price_cart(@carts) %></h5>
   </div>
   <div class="select-button">
-    <a href="#" class="primary-btn view-card"><%= t "header.view_cart" %></a>
+    <%= link_to t("header.view_cart"), carts_path, class: "primary-btn view-card" %>
     <a href="#" class="primary-btn checkout-btn"><%= t "header.check_out" %></a>
   </div>
 </div>

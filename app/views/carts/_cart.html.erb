@@ -1,0 +1,55 @@
+<% unless session_cart_exist? %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t :product_image %></th>
+        <th class="p-name"><%= t :product_name %></th>
+        <th><%= t :product_price %></th>
+        <th><%= t :quantity %></th>
+        <th><%= t :total %></th>
+        <th>
+          <%= link_to delete_carts_path, method: :delete, data: {confirm: t("you_sure")} do %>
+            <i class="ti-close"></i>
+          <% end %>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="all-cart">
+      <% @carts.each do |product| %>
+        <tr>
+          <td class="cart-pic first-row"><img src="/assets/img/cart-page/product-1.jpg" alt=""></td>
+          <td class="cart-title first-row">
+            <h5><%= product.name %></h5>
+          </td>
+          <td class="p-price first-row"><%= number_to_currency product.price %></td>
+          <td class="qua-col first-row">
+            <div class="quantity">
+              <div class="cart-quantity-add" style="display: inline-block">
+                <%= link_to minus_item_carts_path(product.id), class: "minus-product", remote: true do %>
+                  <i class="fa fa-minus"></i>
+                <% end %>
+                <input data-id="<%= product.id %>" type="number" min="1" class="input-quantity w-50"
+                value="<%= session_cart[product.id.to_s] %>" id="<%= session_cart[product.id.to_s] %>">
+                <%= link_to add_to_carts_path(product.id), class: "plus-product" do %>
+                  <i class="fa fa-plus"></i>
+                <% end %>
+              </div>
+            </div>
+          </td>
+          <td class="total-price first-row">
+            <%= number_to_currency total_item_cart(product.price, session_cart[product.id.to_s]) %>
+          </td>
+          <td class="si-close first-row">
+            <%= link_to destroy_item_carts_path(product.id), method: :delete, data: {confirm: "You sure?", remote: true} do %>
+              <i class="ti-close"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h1><%= t :cart_empty %></h1>
+<% end %>
+
+<%= javascript_pack_tag "handle-ajax-cart" %>
