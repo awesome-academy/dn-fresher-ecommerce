@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  scope "(:locale)", locale: /en|vi/ do
     concern :paginatable do
       get "(page/:page)", action: :index, on: :collection, as: ""
     end
@@ -7,5 +6,7 @@ Rails.application.routes.draw do
     root to: "pages#home"
     get "add-to-cart/:id(/:quantity)", to: "carts#add_to_cart",
                                        as: :add_to_cart
-  end
+    get "/login", to: "sessions#new"
+    post "/login", to: "sessions#create"
+    delete "/logout", to: "sessions#destroy"
 end

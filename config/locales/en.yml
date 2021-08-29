@@ -1,9 +1,26 @@
 en:
+  eng: "English"
+  vnese: "Vietnamese"
+  title_page: "Sun Ecommerce"
+  error_message:
+    alert: "The form contains %{error}."
+    error: "error"
+    wrong_email_or_password: "Your email or password were wrong."
+  application:
+    about: "About"
+    news: "News"
+    help: "Help"
+    home: "Home"
+  header:
+    account: "Account"
+    setting: "Settings"
+    log_out: "Log out"
+    profile: "Profile"
+  footer:
+    introduce: "The %{course} by %{author}"
   pages:
     home:
-      eng: "English"
-      vnese: "Vietnamese"
-      title: "Ecommerce Applicaiton"
+      title: "Homepage"
       greeting: "Hello World"
   number:
     currency:
@@ -45,4 +62,20 @@ en:
           other: "Displaying <b>all %{count}</b> %{entry_name}"
       more_pages:
         display_entries: "Displaying %{entry_name} <b>%{first} - %{last}</b> of <b>%{total}</b> in total"
+    label:
+      user:
+        password_confirmation: "Confirmation password"
+        submit_btn: "Create my account"
+      session:
+        email: "Email"
+        password: "Password"
   not_found: "Not found value"
+  sessions:
+    new:
+      log_in: "Log in"
+      remember_me: "Remember me?"
+      new_user: "Or Create An Account?"
+      sign_up_now: "Sign up now!"
+      forgot_pass: "Forget your Password"
+
+

@@ -1,9 +1,26 @@
 vi:
+  eng: "Tiếng Anh"
+  vnese: "Tiếng Việt"
+  title_page: "Thương mại điện tử Sun"
+  error_message:
+    alert: "Phát hiện %{error}, vui lòng nhập lại"
+    error: "lỗi"
+    wrong_email_or_password: "Tên đăng nhập hoặc mật khẩu không đúng."
+  application:
+    about: "Về chúng tôi"
+    news: "Tin tức"
+    help: "Hướng dẫn"
+    home: "Trang chủ"
+  header:
+    account: "Tài khoản"
+    setting: "Thiết lập"
+    log_out: "Đăng xuất"
+    profile: "Trang cá nhân"
+  footer:
+    introduce: "Sản phẩm %{course} bởi %{author}"
   pages:
     home:
-      eng: "Tiếng Anh"
-      vnese: "Tiếng Việt"
-      title: "Thương mại điện tử"
+      title: "Trang chủ"
       greeting: "Xin chào mọi người"
   number:
     currency:
@@ -15,3 +32,21 @@ vi:
         significant: false
         strip_insignificant_zeros: true
         unit: "đồng"
+  sessions:
+    new:
+      log_in: "Đăng nhập"
+      remember_me: "Ghi nhớ đăng nhập?"
+      new_user: "Đăng ký mới?"
+      sign_up_now: "Đăng ký ngay"
+      forgot_pass: "Quên mật khẩu?"
+  helpers:
+    label:
+      user:
+        name: "Tên"
+        email: "Email"
+        password: "Mật khẩu"
+        password_confirmation: "Nhập lại mật khẩu"
+        submit_btn: "Tạo tài khoản"
+      session:
+        email: "Email"
+        password: "Mật khẩu"

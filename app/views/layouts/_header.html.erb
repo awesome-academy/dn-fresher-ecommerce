@@ -1,43 +1,12 @@
 <!-- Header Section Begin -->
 <header class="header-section">
-  <div class="header-top">
-    <div class="container">
-      <div class="ht-left">
-        <div class="mail-service">
-          <i class=" fa fa-envelope"></i>
-          <%= t :email_contact %>
-        </div>
-        <div class="phone-service">
-          <i class=" fa fa-phone"></i>
-          <%= t :number_phone %>
-        </div>
-      </div>
-      <div class="ht-right">
-        <a href="#" class="login-panel"><i class="fa fa-user"></i></a>
-        <div class="lan-selector">
-          <select class="language_drop" name="countries" id="countries">
-            <option value='yt' data-image="assets/img/flag-1.jpg" data-imagecss="flag yt"
-              data-title="English"><%= link_to t("header.en"), locale: :en %></option>
-            <option value='yu' data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
-              data-title="Vietnamese"><%= link_to t("header.vi"), locale: :vi %></option>
-          </select>
-        </div>
-        <div class="top-social">
-          <a href="#"><i class="ti-facebook"></i></a>
-          <a href="#"><i class="ti-twitter-alt"></i></a>
-          <a href="#"><i class="ti-linkedin"></i></a>
-          <a href="#"><i class="ti-pinterest"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="container">
     <div class="inner-header">
       <div class="row">
         <div class="col-lg-2 col-md-2">
           <div class="logo">
             <a href="./index.html">
-            <img src="img/logo.png" alt="">
+            <img src="assets/img/logo.png" alt="">
             </a>
           </div>
         </div>
@@ -62,6 +31,34 @@
               <%= render "layouts/cart" %>
             </li>
             <li class="cart-price"><%= number_to_currency total_price_cart @carts %></li>
+            <% if logged_in? %>
+              <li class="dropdown">
+                <%= link_to "#", class: "dropdown-toggle login-header", "data-toggle": "dropdown", "aria-expanded": "true" do %>
+                  <%= content_tag(:i, "", class: "fa fa-user")%>
+                <% end %>
+                <ul class="dropdown-menu">
+                  <li><%= link_to t("header.profile"), "#" %></li>
+                  <li><%= link_to t("header.setting"), "#" %></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to t("header.log_out"), logout_path, method: :delete %>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <%= button_to logout_path, method: :delete do %>
+                  <%= content_tag(:i, "", class: "fa fa-sign-out")%>
+                  <%= t "Logout" %>
+                <% end %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to login_path, class: "login-header" do %>
+                  <%= content_tag(:i, "", class: "fa fa-user")%>
+                  <%= t "sessions.new.login" %>
+                <% end %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -94,6 +91,19 @@
             <a href="#"><%= t :no_link %></a>
             <ul class="dropdown">
               <li><a href="./blog-details.html"><%= t :no_link %></a></li>
+              <li><a href="./shopping-cart.html"><%= t :no_link %></a></li>
+              <li><a href="./check-out.html"><%= t :no_link %></a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="./blog.html">Language</a>
+            <ul class="dropdown">
+              <li><%= link_to t("eng"), locale: :en %></li>
+              <li><%= link_to t("vnese") , locale: :vi %></li>
+              <li>
+
+
+              </li>
             </ul>
           </li>
         </ul>
