@@ -1,4 +1,4 @@
-<% unless session_cart_exist? %>
+<% if session_cart_exist? %>
   <table>
     <thead>
       <tr>
@@ -15,7 +15,7 @@
       </tr>
     </thead>
     <tbody class="all-cart">
-      <% @carts.each do |product| %>
+      <% @products_load_in_cart.each do |product| %>
         <tr>
           <td class="cart-pic first-row"><img src="/assets/img/cart-page/product-1.jpg" alt=""></td>
           <td class="cart-title first-row">

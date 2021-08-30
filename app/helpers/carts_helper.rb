@@ -8,7 +8,7 @@ module CartsHelper
   end
 
   def session_cart_exist?
-    current_cart.nil?
+    current_cart.present?
   end
 
   def total_item_cart price, total_quantity_item
@@ -16,11 +16,11 @@ module CartsHelper
   end
 
   def total_quantity_cart cart
-    session_cart_exist? ? 0 : cart.count
+    session_cart_exist? ? cart.count : 0
   end
 
   def total_price_cart cart
-    return 0 if session_cart_exist?
+    return 0 unless session_cart_exist?
 
     cart.reduce(0) do |total, product|
       total + product.price.to_i * session_cart[product.id.to_s].to_i

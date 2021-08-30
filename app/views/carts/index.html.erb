@@ -20,10 +20,14 @@
             <div class="proceed-checkout">
               <ul>
                 <li class="cart-total">Total 
-                  <span><%= number_to_currency total_price_cart(@carts) %></span>
+                  <span><%= number_to_currency total_price_cart(@products_load_in_cart) %></span>
                 </li>
               </ul>
-              <a href="#" class="proceed-btn"><%= t :checkout %></a>
+              <% if logged_in? %>
+                <%= link_to t("check_out"), new_order_path, class: "proceed-btn" %>
+              <% else %>
+                <%= link_to t("log_in"), login_path, class: "proceed-btn" %>
+              <% end %>
             </div>
           </div>
         </div>

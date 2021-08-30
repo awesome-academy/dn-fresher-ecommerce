@@ -1,13 +1,13 @@
 <a href="#">
   <i class="icon_bag_alt"></i>
-  <span><%= total_quantity_cart @carts %></span>
+  <span><%= total_quantity_cart @products_load_in_cart %></span>
 </a>
 <div class="cart-hover">
   <div class="select-items">
     <table>
       <tbody>
-        <% unless session_cart_exist? %>
-          <% @carts.take(3).each do |product| %>
+        <% if session_cart_exist? %>
+          <% @products_load_in_cart.take(3).each do |product| %>
             <tr>
               <td class="si-pic"><img src="/assets/img/select-product-1.jpg" alt=""></td>
               <td class="si-text">
@@ -37,10 +37,14 @@
   </div>
   <div class="select-total">
     <span><%= t :total_cart %></span>
-    <h5><%= number_to_currency total_price_cart(@carts) %></h5>
+    <h5><%= number_to_currency total_price_cart(@products_load_in_cart) %></h5>
   </div>
   <div class="select-button">
     <%= link_to t("header.view_cart"), carts_path, class: "primary-btn view-card" %>
-    <a href="#" class="primary-btn checkout-btn"><%= t "header.check_out" %></a>
+    <% if logged_in? %>
+      <%= link_to t("header.check_out"), new_order_path, class: "primary-btn checkout-btn" %>
+    <% else %>
+      <%= link_to t("sessions.new.log_in"), login_path, class: "primary-btn checkout-btn" %>
+    <% end %>
   </div>
 </div>

@@ -61,7 +61,7 @@
             <li class="cart-icon">
               <%= render "layouts/cart" %>
             </li>
-            <li class="cart-price"><%= number_to_currency total_price_cart @carts %></li>
+            <li class="cart-price"><%= number_to_currency total_price_cart @products_load_in_cart %></li>
             <% if logged_in? %>
               <li class="dropdown">
                 <%= link_to "#", class: "dropdown-toggle login-header", "data-toggle": "dropdown", "aria-expanded": "true" do %>
@@ -129,8 +129,8 @@
           <li>
             <a href="./blog.html"><%= t "header.language" %></a>
             <ul class="dropdown">
-              <li><%= link_to t("header.en"), locale: :en %></li>
-              <li><%= link_to t("header.vi") , locale: :vi %></li>
+              <li><%= link_to t("eng"), locale: :en %></li>
+              <li><%= link_to t("vnese") , locale: :vi %></li>
             </ul>
           </li>
         </ul>
