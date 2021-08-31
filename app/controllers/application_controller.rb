@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
   include CartsHelper
 
   before_action :set_locale

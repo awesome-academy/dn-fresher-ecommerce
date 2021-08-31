@@ -6,14 +6,14 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="stylesheet" href="assets/bootstrap-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/themify-icons-font/themify-icons/themify-icons.css" type="text/css">
-    <link rel="stylesheet" href="assets/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/jquery-nice-select-1.1.0/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="assets/jquery-ui-1.12.1/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/SlickNav-master/dist/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/bootstrap-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/themify-icons-font/themify-icons/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="/assets/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/jquery-nice-select-1.1.0/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/assets/jquery-ui-1.12.1/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/SlickNav-master/dist/slicknav.min.css" type="text/css">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
   </head>
@@ -26,9 +26,6 @@
     <%= render "layouts/header" %>
 
     <div>
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
       <%= yield %>
     </div>
 
@@ -38,30 +35,30 @@
         <div class="logo-carousel owl-carousel">
           <div class="logo-item">
             <div class="tablecell-inner">
-              <img src="assets/img/logo-carousel/logo-1.png" alt="">
+              <img src="/assets/img/logo-carousel/logo-1.png" alt="">
             </div>
           </div>
           <div class="logo-item">
             <div class="tablecell-inner">
-              <img src="assets/img/logo-carousel/logo-2.png" alt="">
+              <img src="/assets/img/logo-carousel/logo-2.png" alt="">
             </div>
           </div>
           <div class="logo-item">
             <div class="tablecell-inner">
-              <img src="assets/img/logo-carousel/logo-3.png" alt="">
+              <img src="/assets/img/logo-carousel/logo-3.png" alt="">
             </div>
           </div>
           <div class="logo-item">
             <div class="tablecell-inner">
-              <img src="assets/img/logo-carousel/logo-4.png" alt="">
+              <img src="/assets/img/logo-carousel/logo-4.png" alt="">
             </div>
           </div>
           <div class="logo-item">
             <div class="tablecell-inner">
-              <img src="assets/img/logo-carousel/logo-5.png" alt="">
+              <img src="/assets/img/logo-carousel/logo-5.png" alt="">
             </div>
           </div>
-        </div>
+        </div>/
       </div>
     </div>
     <!-- Partner Logo Section End -->
@@ -72,15 +69,15 @@
     <%= render "layouts/footer" %>
 
     <!-- Js Plugins -->
-    <script src="assets/jquery-3.3.1.min.js"></script>
-    <script src="assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
-    <script src="assets/jQuery.countdown/dist/jquery.countdown.min.js"></script>
-    <script src="assets/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
-    <script src="assets/zoom-master/jquery.zoom.min.js"></script>
-    <script src="assets/jquery.dd.min.js"></script>
-    <script src="assets/jquery.slicknav.js"></script>
-    <script src="assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-    <script src="assets/main.js"></script>
+    <script src="/assets/jquery-3.3.1.min.js"></script>
+    <script src="/assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="/assets/jQuery.countdown/dist/jquery.countdown.min.js"></script>
+    <script src="/assets/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
+    <script src="/assets/zoom-master/jquery.zoom.min.js"></script>
+    <script src="/assets/jquery.dd.min.js"></script>
+    <script src="/assets/jquery.slicknav.js"></script>
+    <script src="/assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="/assets/main.js"></script>
     <script><%= sanitize toastr_flash %></script>
   </body>
 </html>

@@ -1,3 +1,6 @@
 class PagesController < ApplicationController
-  def home; end
+  def home
+    store_location
+    @products = Product.all
+  end
 end

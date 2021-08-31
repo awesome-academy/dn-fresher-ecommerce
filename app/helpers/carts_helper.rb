@@ -3,8 +3,16 @@ module CartsHelper
     session[:cart] ||= Hash.new
   end
 
+  def current_cart
+    @current_cart ||= session[:cart]
+  end
+
   def session_cart_exist?
-    session_cart.nil?
+    current_cart.nil?
+  end
+
+  def total_item_cart price, total_quantity_item
+    @total_item_cart = price.to_i * total_quantity_item.to_i
   end
 
   def total_quantity_cart cart

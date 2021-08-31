@@ -1,14 +1,13 @@
 <div class="product-item">
   <div class="pi-pic">
-    <img src="assets/img/products/man-1.jpg" alt="">
+    <img src="/assets/img/products/man-1.jpg" alt="">
     <div class="icon">
-        <i class="icon_heart_alt"></i>
+      <h3><%= t("sold_out") if product.quantity.zero? %></h3>
     </div>
     <ul>
       <li class="w-icon active">
-        <%= link_to add_to_cart_path(product.id) do %>
-          <i class="icon_bag_alt"></i>
-        <% end %>
+        <%= link_to_unless product.quantity.zero?, '<i class="icon_bag_alt"></i>'.html_safe,
+        add_to_carts_path(product.id) %>
       </li>
       <li class="quick-view"><%= link_to t("detail_product"), "#" %></li>
       <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
