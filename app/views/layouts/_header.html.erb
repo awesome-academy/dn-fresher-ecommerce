@@ -108,8 +108,8 @@
       </div>
       <nav class="nav-menu mobile-menu">
         <ul>
-          <li class="active"><a href="./index.html"><%= t :no_link %></a></li>
-          <li><a href="./shop.html"><%= t :no_link %></a></li>
+          <li class="active"><%= link_to t("application.home"), root_path %></li>
+          <li><%= link_to t("product.shop"), products_path %></li>
           <li>
             <a href="#"><%= t :no_link %></a>
             <ul class="dropdown">
@@ -127,14 +127,10 @@
             </ul>
           </li>
           <li>
-            <a href="./blog.html">Language</a>
+            <a href="./blog.html"><%= t "header.language" %></a>
             <ul class="dropdown">
-              <li><%= link_to t("eng"), locale: :en %></li>
-              <li><%= link_to t("vnese") , locale: :vi %></li>
-              <li>
-
-
-              </li>
+              <li><%= link_to t("header.en"), locale: :en %></li>
+              <li><%= link_to t("header.vi") , locale: :vi %></li>
             </ul>
           </li>
         </ul>

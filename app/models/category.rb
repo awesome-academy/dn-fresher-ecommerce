@@ -4,4 +4,6 @@ class Category < ApplicationRecord
                             foreign_key: :parent_id,
                             dependent: :destroy
   belongs_to :parent_category, class_name: Category.name, optional: true
+
+  scope :order_name_asc, ->{order(name: :asc)}
 end

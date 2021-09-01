@@ -1,5 +1,11 @@
 validation:
   name_max: 50
   email_max: 255
-remember_me:
-  checked: 1
+show_limit:
+  show_6: 6
+  show_9: 9
+  show_12: 12
+  show_15: 15
+  show_18: 18
+minnimun_show: 1
+limit_home_product: 9

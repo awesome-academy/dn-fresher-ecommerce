@@ -6,4 +6,7 @@ class Product < ApplicationRecord
   belongs_to :category
 
   scope :load_by_ids, ->(ids){where id: ids}
+  scope :lastest_product, ->{order(created_at: :desc)}
+  scope :lastest_9_product,
+        ->{order(created_at: :desc).limit Settings.limit_home_product}
 end

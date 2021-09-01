@@ -29,43 +29,9 @@
       <%= yield %>
     </div>
 
-    <!-- Partner Logo Section Begin -->
-    <div class="partner-logo">
-      <div class="container">
-        <div class="logo-carousel owl-carousel">
-          <div class="logo-item">
-            <div class="tablecell-inner">
-              <img src="/assets/img/logo-carousel/logo-1.png" alt="">
-            </div>
-          </div>
-          <div class="logo-item">
-            <div class="tablecell-inner">
-              <img src="/assets/img/logo-carousel/logo-2.png" alt="">
-            </div>
-          </div>
-          <div class="logo-item">
-            <div class="tablecell-inner">
-              <img src="/assets/img/logo-carousel/logo-3.png" alt="">
-            </div>
-          </div>
-          <div class="logo-item">
-            <div class="tablecell-inner">
-              <img src="/assets/img/logo-carousel/logo-4.png" alt="">
-            </div>
-          </div>
-          <div class="logo-item">
-            <div class="tablecell-inner">
-              <img src="/assets/img/logo-carousel/logo-5.png" alt="">
-            </div>
-          </div>
-        </div>/
-      </div>
-    </div>
-    <!-- Partner Logo Section End -->
     <!-- Debug
     <%= debug(params) if Rails.env.development? %>
     -->
-
     <%= render "layouts/footer" %>
 
     <!-- Js Plugins -->
@@ -79,5 +45,6 @@
     <script src="/assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
     <script src="/assets/main.js"></script>
     <script><%= sanitize toastr_flash %></script>
+    <%= javascript_pack_tag "custom", "data-turbolinks-track": "reload" %>
   </body>
 </html>
