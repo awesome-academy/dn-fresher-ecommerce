@@ -31,8 +31,8 @@ config/credentials.yml.enc
 .gitattributes
 .framgia-ci-reports/
 .framgia-ci-result.temp.yml
-/spec/
 /vendor/*
+/coverage/
 
 config/settings.local.yml
 config/settings/*.local.yml
