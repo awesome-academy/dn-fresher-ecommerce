@@ -1,0 +1,65 @@
+<!-- Shopping Cart Section Begin -->
+<section class="checkout-section spad">
+  <div class="container">
+    <%= form_for Order.new, url: orders_path, html: {class: "checkout-form"} do |form| %>
+      <div class="row">
+        <div class="col-lg-6">
+          <h4><%= t :biiling_details %></h4>
+          <div class="row">
+            <% unless @delivery_addresses.nil? %>
+              <div class="col-lg-12">
+                <%= form.label :delivery_address_id, t("address_delivery_html") %>
+                <%= form.select :delivery_address_id, @delivery_addresses.collect{|p| [p.address, p.id]},
+                {include_blank: false}, class: "form-control" %>
+              </div>
+            <% else %>
+              <div class="col-lg-12">
+                <label for="fir"><%= t :full_name %><span>*</span></label>
+                <input type="text" id="fir">
+                <%= form.label :delivery_address_id, t("address_delivery_html") %>
+                <%= form.text_field :delivery_address_id %>
+              </div>
+            <% end %>
+            <div class="col-lg-12">
+              <div class="create-item">
+                <label for="acc-create">
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="place-order">
+            <h4><%= t :your_order %></h4>
+            <div class="order-total">
+              <ul class="order-table">
+                <li><%= t :product %> <span><%= t :total %></span></li>
+                <% @products_load_in_cart.each do |product| %>
+                  <li class="fw-normal">
+                    <%= number_to_currency product.name %> x <%= session_cart[product.id.to_s] %>
+                    <span><%= number_to_currency total_item_cart(product.price, session_cart[product.id.to_s]) %></span>
+                  </li>
+                <% end %>
+                <li class="total-price"><%= t :total %> <span><%= number_to_currency total_price_cart(@products_load_in_cart) %></span></li>
+              </ul>
+              <div class="payment-check">
+                <div class="pc-item">
+                  <label for="pc-check">
+                  </label>
+                </div>
+                <div class="pc-item">
+                  <label for="pc-paypal">
+                  </label>
+                </div>
+              </div>
+              <div class="order-btn">
+                <%= form.submit t("place_order"), class: "site-btn place-btn" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
+<!-- Shopping Cart Section End -->

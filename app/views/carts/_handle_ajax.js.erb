@@ -1,5 +1,5 @@
 <%= sanitize toastr_flash %>
 $('.cart-table').html('<%= j render "carts/cart" %>');
 $('.cart-icon').html('<%= j render "layouts/cart" %>');
-$('.cart-price').html('<%= number_to_currency total_price_cart(@carts) %>');
-$('.cart-total').html('<span><%= number_to_currency total_price_cart(@carts) %></span>');
+$('.cart-price').html('<%= number_to_currency total_price_cart(@products_load_in_cart) %>');
+$('.cart-total').html('<span><%= number_to_currency total_price_cart(@products_load_in_cart) %></span>');

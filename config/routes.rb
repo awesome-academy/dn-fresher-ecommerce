@@ -20,4 +20,5 @@ Rails.application.routes.draw do
     end
   end
   resources :products, only: :index
+  resources :orders, only: %i(new create)
 end
